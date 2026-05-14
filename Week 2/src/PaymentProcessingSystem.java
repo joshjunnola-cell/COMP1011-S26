@@ -1,10 +1,25 @@
 /*
+“Abstractions must earn their place”
+You should only introduce:
+an interface, an abstract class or both
+if it provides at least one of these:
+a) Decoupling (most important)
+Callers depend on a stable contract, not concrete classes.
+b) Polymorphism across unrelated hierarchies
+Different class trees can implement the same behavior.
+c) Shared reusable implementation
+You avoid duplication in multiple classes.
+ */
+ /*
 Interface = “what to do”
 Abstract class = “shared behavior”
 Polymorphism = “same type, different behavior”
 Overloading = “same method, different parameters”
+Overriding = "Giving a 'new' definition to a method"
+
  */
- /*Use an interface when:
+ /*
+ Use an interface when:
     You want to define a contract for unrelated classes
     You need multiple inheritance
 Use an abstract class when:
@@ -50,7 +65,7 @@ abstract class AbstractPayment implements PaymentMethod {
 
     // Concrete method
     public void printReceipt(double amount) {
-        String result = String.format("%.2f", amount);
+        String result = String.format("%.2f", amount); // Format 2 decimal points
         System.out.println("Receipt: " + accountHolder + " paid $" + result);
     }
 
@@ -147,7 +162,7 @@ public class PaymentProcessingSystem {
 
     public static void main(String[] args) {
 
-        // Polymorphism (runtime)
+        // Polymorphism (runtime/dynamic)
         PaymentMethod p1 = new CreditCardPayment("Alice", "1234-5678");
         PaymentMethod p2 = new PayPalPayment("Bob", "bob@email.com");
         PaymentMethod p3 = new CryptoPayment("Charlie", "0xABC123");
@@ -159,7 +174,7 @@ public class PaymentProcessingSystem {
             payment.pay(100.00); // Runtime polymorphism
         }
 
-        // Compile-time polymorphism (method overloading)
+        // Compile-time/static polymorphism (method overloading)
         PaymentUtils utils = new PaymentUtils();
         utils.process(50);
         utils.process(75, "Priority");
