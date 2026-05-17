@@ -186,15 +186,18 @@ public class Assignment1FitnessApp {
         // Loop through workouts:
         // 1. Print workout type
         // 2. Call performWorkout()
+        int totalMinutes = 0;
+
         for (AbstractWorkout workout : workouts) {
             System.out.println("\nWorkout Type: " + workout.getWorkoutType());
             workout.performWorkout();
+            totalMinutes += workout.duration; //adds time together
         }
         // TODO 17:
         // Create FitnessUtils object
         // Call both versions of logSummary()
         FitnessUtils utils = new FitnessUtils();
-        utils.logSummary(45);
-        utils.logSummary(34, "Intermediate");
+        utils.logSummary(totalMinutes);
+        utils.logSummary(totalMinutes, "Intermediate");
     }
 }
