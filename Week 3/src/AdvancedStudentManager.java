@@ -159,17 +159,22 @@ Works perfectly with String menus or enums.
                     System.out.print("Enter course: ");
                     String course = scanner.nextLine().trim();
 
-                    // Prevent duplicates (same name + course)
-                    boolean exists = students.stream()
-                            .anyMatch(s -> s.getName().equalsIgnoreCase(name)
-                            && s.getCourse().equalsIgnoreCase(course));
-                    if (exists) {
-                        System.out.println("Student with same name and course already exists!");
-                    } else if (name.isBlank() || course.isBlank()) {
+                    if (name.isBlank() || course.isBlank()) {
                         System.out.println("Name or course cannot be empty!");
+
                     } else {
-                        students.add(new Student(name, course));
-                        System.out.println("Student added!");
+
+                        // Prevent duplicates (same name + course)
+                        boolean exists = students.stream()
+                                .anyMatch(s -> s.getName().equalsIgnoreCase(name)
+                                && s.getCourse().equalsIgnoreCase(course));
+
+                        if (exists) {
+                            System.out.println("Student with same name and course already exists! Cannot add student.");
+                        } else {
+                            students.add(new Student(name, course));
+                            System.out.println("Student added!");
+                        }
                     }
                     yield ""; // block must yield a value
                 }
