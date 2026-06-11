@@ -83,7 +83,7 @@ public class FileWatchExample {
                     }
                 }
 
-                //handled the events, keep watching
+                //handled the events, keep watching ******** IMPORTANT **********
                 //Re-enables the key so future events continue being received. Without reset(), the watcher would stop after processing the first batch of events.
                 boolean valid = key.reset();
 

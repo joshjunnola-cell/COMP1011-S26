@@ -35,14 +35,14 @@ public class ThreadCompletionExample {
 
                     // Simulate a time-consuming task.
                     // sleep() pauses the current thread
-                    // for 2000 milliseconds (2 seconds).
+                    // for 10000 milliseconds (10 seconds).
                     //
                     // In real applications, a task might:
                     // - read a file
                     // - perform calculations
                     // - process data
                     // - handle network communication
-                    Thread.sleep(2000);
+                    Thread.sleep(10000);
 
                 } catch (InterruptedException e) {
 
