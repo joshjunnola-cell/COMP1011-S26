@@ -6,8 +6,11 @@ Can be messy when values come from variables.
 SQL injection occurs when a program builds SQL by concatenating user input directly into the SQL string.
  */
 import java.sql.Connection;
+import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class Main {
 
@@ -22,7 +25,7 @@ public class Main {
 
             Connection conn = DriverManager.getConnection(url, user, password);
             System.out.println("Connected successfully!");
-/* 
+
             DatabaseMetaData dbMetaData = conn.getMetaData();
             System.out.println("Database Product Name: " + dbMetaData.getDatabaseProductName());
             System.out.println("Database Product Version: " + dbMetaData.getDatabaseProductVersion());
@@ -51,14 +54,17 @@ public class Main {
                 System.out.println("Found Table: " + tableName);
             }
             rs1.close();
-
+ 
             // Example query
             Statement stmt = conn.createStatement();
+
             ResultSet rs = stmt.executeQuery("SELECT NOW()");
             if (rs.next()) {
                 System.out.println("Database time: " + rs.getString(1));
+            } else {
+                System.out.println("rs.next() returned false");
             }
-*/
+
             conn.close(); // automatically closes statements and result sets
         } catch (ClassNotFoundException e) {
             System.out.println("MySQL JDBC Driver not found. Did you add the JAR to lib/?");
