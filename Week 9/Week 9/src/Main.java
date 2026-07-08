@@ -6,18 +6,15 @@ Can be messy when values come from variables.
 SQL injection occurs when a program builds SQL by concatenating user input directly into the SQL string.
  */
 import java.sql.Connection;
-import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class Main {
 
     public static void main(String[] args) {
-        String url = "jdbc:mysql://localhost:3306/georgian_college?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
-        String user = "root";          // your MySQL username
-        String password = "";
+        String url = "jdbc:mysql://127.0.0.1:3306/georgian_college?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
+        String user = "root";       // Your MYSQL username
+        String password = "Googlechrome12";
 
         try {
             // Force loading the MySQL driver
@@ -25,7 +22,7 @@ public class Main {
 
             Connection conn = DriverManager.getConnection(url, user, password);
             System.out.println("Connected successfully!");
-
+/* 
             DatabaseMetaData dbMetaData = conn.getMetaData();
             System.out.println("Database Product Name: " + dbMetaData.getDatabaseProductName());
             System.out.println("Database Product Version: " + dbMetaData.getDatabaseProductVersion());
@@ -61,7 +58,7 @@ public class Main {
             if (rs.next()) {
                 System.out.println("Database time: " + rs.getString(1));
             }
-
+*/
             conn.close(); // automatically closes statements and result sets
         } catch (ClassNotFoundException e) {
             System.out.println("MySQL JDBC Driver not found. Did you add the JAR to lib/?");
