@@ -6,7 +6,7 @@ public class RSMetaDataExample {
     public static void main(String[] args) {
         String url = "jdbc:mysql://localhost:3306/georgian_college?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
         String user = "root";
-        String password = "";
+        String password = "Googlechrome12";
 
         String sql = "SELECT * FROM employee_information"; // Can be any query on any table
 

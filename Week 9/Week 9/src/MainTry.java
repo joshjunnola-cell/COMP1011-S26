@@ -17,7 +17,7 @@ public class MainTry {
 
         String url = "jdbc:mysql://localhost:3306/georgian_college?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
         String user = "root";          // your MySQL username
-        String password = "";
+        String password = "Googlechrome12";
 
         try {
             //is used to dynamically load and register the MySQL database driver into your Java

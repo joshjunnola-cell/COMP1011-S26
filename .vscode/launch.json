@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "EchoServer",
+            "request": "launch",
+            "mainClass": "EchoServer",
+            "projectName": "repo_7ecc6ccc"
+        },
+        {
+            "type": "java",
+            "name": "EchoClient",
+            "request": "launch",
+            "mainClass": "EchoClient",
+            "projectName": "repo_7ecc6ccc"
+        },
+        {
+            "type": "java",
+            "name": "MainTry",
+            "request": "launch",
+            "mainClass": "MainTry",
+            "projectName": "repo_7ecc6ccc"
+        },
+        {
+            "type": "java",
             "name": "Launch Main",
             "request": "launch",
             "mainClass": "Main",

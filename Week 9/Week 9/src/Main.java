@@ -46,7 +46,7 @@ public class Main {
             System.out.println("Supports Batch: " + supportsBatch);
             // Parameters: catalog, schemaPattern, tableNamePattern, types[]
             // Passing null or "%" acts as a wildcard filter
-            ResultSet rs1 = dbMetaData.getTables(null, null, "%", new String[]{"TABLE"});
+            ResultSet rs1 = dbMetaData.getTables("georgian_college", null, "%", new String[]{"TABLE"});
 
             while (rs1.next()) {
                 // The 3rd column in the returned ResultSet contains the actual Table Name

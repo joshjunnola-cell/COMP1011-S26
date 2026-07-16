@@ -8,7 +8,7 @@ public class EmployeeDAO {
             = "jdbc:mysql://localhost:3306/georgian_college";
 
     private static final String USER = "root";
-    private static final String PASSWORD = "";
+    private static final String PASSWORD = "Googlechrome12";
 
     public Connection connect() throws SQLException {
         return DriverManager.getConnection(URL, USER, PASSWORD);
