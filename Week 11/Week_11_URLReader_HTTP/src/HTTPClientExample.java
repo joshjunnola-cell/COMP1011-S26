@@ -58,7 +58,7 @@ public class HTTPClientExample {
                     .forEach((key, value)
                             -> System.out.println(key + " : " + value));
 
-            System.out.println();
+            System.out.println();   
 
             System.out.println("Response Body:");
             System.out.println("--------------------------------------");
